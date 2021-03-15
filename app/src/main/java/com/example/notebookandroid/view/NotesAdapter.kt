@@ -15,8 +15,8 @@ import java.util.*
 /**
  * Created by DiaHard_04 on 15-03-2021.
  */
-class NotesAdapter(context: Context, notesList: List<Note>) :
-    RecyclerView.Adapter<NotesAdapter.MyViewHolder?>() {
+class NotesAdapter(context: Context, notesList: List<Note>) : RecyclerView.Adapter<NotesAdapter.MyViewHolder?>() {
+
     private val context: Context
     private val notesList: List<Note>
 
@@ -32,19 +32,13 @@ class NotesAdapter(context: Context, notesList: List<Note>) :
         }
     }
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView: View = LayoutInflater.from(parent.context)
             .inflate(R.layout.note_list_row, parent, false)
         return MyViewHolder(itemView)
     }
 
-    override fun onBindViewHolder(
-        holder: MyViewHolder,
-        position: Int
-    ) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val note = notesList[position]
         holder.note.setText(note.getNote())
 
